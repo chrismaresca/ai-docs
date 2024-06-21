@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { authMiddleware, redirectToHome, redirectToLogin } from "next-firebase-auth-edge";
 import { authConfig } from "./config/server-config";
 
-const PUBLIC_PATHS = ['/register', '/login', '/reset-password'];
+const PUBLIC_PATHS = ["/register", "/login", "/reset-password"];
 
 export async function middleware(request: NextRequest) {
   return authMiddleware(request, {
@@ -46,7 +46,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/((?!_next|api|.*\\.).*)", "/api/login", "/api/logout"],
+  matcher: ["/api/login", "/api/logout"],
+  // matcher: ["/", "/((?!_next|api|.*\\.).*)", "/api/login", "/api/logout"],
 };
-
-
