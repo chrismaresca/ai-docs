@@ -27,7 +27,8 @@ export async function middleware(request: NextRequest) {
     },
 
     handleInvalidToken: async (reason) => {
-      console.info("Missing or malformed credentials", { reason });
+
+      // console.info("Missing or malformed credentials", { reason });
 
       return redirectToLogin(request, {
         path: "/login",
@@ -46,6 +47,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/api/login", "/api/logout"],
-  // matcher: ["/", "/((?!_next|api|.*\\.).*)", "/api/login", "/api/logout"],
+  // matcher: ["/api/login", "/api/logout"],
+  matcher: ["/", "/((?!_next|api|.*\\.).*)", "/api/login", "/api/logout"],
 };
