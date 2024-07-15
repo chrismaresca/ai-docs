@@ -10,7 +10,7 @@ export const getGoogleProvider = (auth: Auth) => {
   const provider = new GoogleAuthProvider();
   provider.addScope("profile");
   provider.addScope("email");
-  useDeviceLanguage(auth);
+  // useDeviceLanguage(auth);
   provider.setCustomParameters({
     display: "popup",
   });

@@ -20,57 +20,67 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --background: 262.5 66.67% 95.29%;
+    --foreground: 264.88 64.06% 25.1%;
+    --card: 300 20% 99.02%;
+    --card-foreground: 240 6.67% 2.94%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-hover: 240 5.9% 20%; /* 10% lighter */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-hover: 240 4.8% 85.9%; /* 10% lighter */
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-hover: 240 4.8% 85.9%; /* 10% lighter */
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-hover: 240 4.8% 85.9%; /* 10% lighter */
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-hover: 0 84.2% 50.2%; /* 10% lighter */
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --popover-foreground: 240 10% 3.92%;
+
+    /* primary */
+    --primary: 255.85 48.62% 21.37%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 14% 96%;
+    --primary-hover-foreground: 221 39% 11%;
+    /* secondary */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 240 5.88% 10%;
+    --secondary-hover: 220 14% 96%;
+    --secondary-hover-foreground: 221 39% 11%;
+    /* muted */
+    --muted: 240 4.76% 95.88%;
+    --muted-foreground: 240 3.83% 46.08%;
+    --accent: 240 4.76% 95.88%;
+    --accent-foreground: 240 5.88% 10%;
+    --destructive: 0 72% 50.98%;
+    --destructive-foreground: 0 0% 98.04%;
+    --border: 240 5.88% 90%;
+    --card-border: 220 13% 91%;
+
+    --input: 268.24 42.5% 84.31%;
+    --ring: 240 5.03% 64.9%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-hover: 0 0% 90%; /* 10% lighter */
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-hover: 240 3.7% 25.9%; /* 10% lighter */
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-hover: 240 3.7% 25.9%; /* 10% lighter */
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-hover: 240 3.7% 25.9%; /* 10% lighter */
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-hover: 0 62.8% 40.6%; /* 10% lighter */
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --background: 240 10% 3.92%;
+    --foreground: 0 0% 98.04%;
+    --card: 240 29.82% 11.18%;
+    --card-foreground: 0 0% 98.04%;
+    --popover: 240 29.82% 11.18%;
+    --popover-foreground: 0 0% 98.04%;
+
+    /* primary */
+    --primary: 0 0% 98.04%;
+    --primary-foreground: 240 5.88% 10%;
+    --primary-hover: 220 13% 91%;
+    --primary-hover-foreground: 221 39% 11%;
+    /* secondary */
+    --secondary: 215, 28%, 17%;
+    --secondary-foreground: 218 11% 65%;
+    --secondary-hover: 220 9% 46%;
+    --secondary-hover-foreground: 0 0% 100%;
+    /* muted */
+    --muted: 240 29.82% 11.18%;
+    --muted-foreground: 0 0% 98.04%;
+    --accent: 240 35.68% 39.02%;
+    --accent-foreground: 0 0% 98.04%;
+    --destructive: 0 62.03% 30.98%;
+    --destructive-foreground: 0 0% 98.04%;
+    --border: 240 17.74% 24.31%;
+    --card-border: 215 14% 34%;
+    --input: 240 3.7% 15.88%;
+    --ring: 240 4.88% 83.92%;
+    --radius: 0.5rem;
   }
 }

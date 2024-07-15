@@ -3,7 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/services/utils";
 import ThemeProvider from "@/containers/theme-provider";
 
-import "./styles/globals.css"
+import "./styles/globals.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-background font-sans antialiased", fontSans.variable)}>
+      <body className={cn("bg-background  font-sans antialiased", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>

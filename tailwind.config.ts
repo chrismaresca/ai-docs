@@ -22,37 +22,39 @@ const config = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          hover: "hsl(var(--primary-hover))",
+          hover: {
+            DEFAULT: "hsl(var(--primary-hover))",
+            foreground: "hsl(var(--primary-hover-foreground))",
+          },
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-          hover: "hsl(var(--secondary-hover))",
+          hover: {
+            DEFAULT: "hsl(var(--secondary-hover))",
+            foreground: "hsl(var(--secondary-hover-foreground))",
+          },
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
-          hover: "hsl(var(--destructive-hover))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
-          hover: "hsl(var(--muted-hover))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
-          hover: "hsl(var(--accent-hover))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
-          hover: "hsl(var(--popover-hover))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-          hover: "hsl(var(--card-hover))",
+          border: "hsl(var(--card-border))",
         },
       },
       borderRadius: {

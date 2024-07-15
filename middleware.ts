@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { authMiddleware, redirectToHome, redirectToLogin } from "next-firebase-auth-edge";
 import { authConfig } from "./config/server-config";
 
-const PUBLIC_PATHS = ["/register", "/login", "/reset-password"];
+const PUBLIC_PATHS = ["/auth/register", "/auth/login", "/auth/reset-password", "/"];
 
 export async function middleware(request: NextRequest) {
   return authMiddleware(request, {
@@ -31,7 +31,7 @@ export async function middleware(request: NextRequest) {
       // console.info("Missing or malformed credentials", { reason });
 
       return redirectToLogin(request, {
-        path: "/login",
+        path: "/auth/login",
         publicPaths: PUBLIC_PATHS,
       });
     },
@@ -39,7 +39,7 @@ export async function middleware(request: NextRequest) {
       console.error("Unhandled authentication error", { error });
 
       return redirectToLogin(request, {
-        path: "/login",
+        path: "/auth/login",
         publicPaths: PUBLIC_PATHS,
       });
     },
@@ -47,6 +47,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // matcher: ["/api/login", "/api/logout"],
-  matcher: ["/", "/((?!_next|api|.*\\.).*)", "/api/login", "/api/logout"],
+  matcher: ["/api/login", "/api/logout"],
+  // matcher: ["/", "/((?!_next|api|.*\\.).*)", "/api/auth/login", "/api/auth/logout"],
 };
