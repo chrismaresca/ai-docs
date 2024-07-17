@@ -13,6 +13,7 @@ import AppleIcon from "@/components/icons/AppleIcon";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
+
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -143,7 +144,7 @@ const LoginForm: React.FC = () => {
                   <p>Forgot password?</p>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p> Please email chris@workmait.ai to reset your password.</p>
+                  <p className="!cursor-pointer"> Please email chris@workmait.ai to reset your password.</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>

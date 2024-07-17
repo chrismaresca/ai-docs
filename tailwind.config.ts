@@ -1,15 +1,24 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 
 const config = {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./containers/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./containers/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}", "./node_modules/preline/preline.js"],
   prefix: "",
   theme: {
+    screens: {
+      "lp-sm": "650px",
+      "lp-md": "899px",
+      ...defaultTheme.screens,
+
+    },
     container: {
       center: true,
       padding: "2rem",
       screens: {
         "2xl": "1400px",
+        
       },
     },
     extend: {
@@ -71,10 +80,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "marquee-reverse": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-reverse": "marquee-reverse var(--duration) linear infinite",
       },
       spacing: {
         "0": "0px",
@@ -115,7 +134,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("preline/plugin")],
 } satisfies Config;
 
 export default config;

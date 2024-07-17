@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/services/utils";
 import ThemeProvider from "@/containers/theme-provider";
+import PrelineScript from "@/components/PrelineScript";
 
 import "./styles/globals.css";
 
@@ -22,11 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-background  font-sans antialiased", fontSans.variable)}>
+      <body className={cn("bg-background scroll-smooth  font-sans antialiased", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>
+      <PrelineScript />
     </html>
   );
 }

@@ -84,3 +84,9 @@
     --radius: 0.5rem;
   }
 }
+
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+}

@@ -7,7 +7,7 @@ export function useRedirectAfterLogin() {
   const redirect = useRedirectParam();
 
   return function () {
-    router.push(redirect ?? "/");
+    router.push(redirect ?? "/projects");
     router.refresh();
   };
 }
