@@ -19,11 +19,11 @@ const WritingStyle: React.FC = () => {
               <span style={{ position: 'relative', zIndex: 2 }}> </span>
               <span style={{ position: 'relative', zIndex: 2 }}>with</span>
               <span style={{ position: 'relative', zIndex: 2 }}> </span>
-              <span style={{ position: 'relative', zIndex: 2 }}>your</span>
-              <span style={{ position: 'relative', zIndex: 2 }}> </span>
-              <span className="highlight relative rounded-sm bg-primary/60 z-1" style={{ backgroundColor: 'primary', position: 'relative', zIndex: 1 }}>information sources</span>
+              {/* <span style={{ position: 'relative', zIndex: 2 }}>your</span>
+              <span style={{ position: 'relative', zIndex: 2 }}> </span> */}
+              {/* <span className="highlight relative rounded-sm bg-primary/60 z-1" style={{ backgroundColor: 'primary', position: 'relative', zIndex: 1 }}>information sources</span> */}
 
-              {/* <span className="highlight" style={{ backgroundColor: 'rgb(213, 229, 238)', position: 'relative', zIndex: 1 }}>information sources</span> */}
+              <span className="highlight" style={{ backgroundColor: 'rgb(42, 28, 81, .75)', position: 'relative', zIndex: 1 }}>your writing</span>
               <span style={{ position: 'relative', zIndex: 2 }}>.</span>
               <br />
             </span>

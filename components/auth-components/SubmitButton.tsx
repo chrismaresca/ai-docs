@@ -12,7 +12,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ isLoading, label, icon, loa
     <button
       type="submit"
       className={`w-full inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-lg border focus:outline-none focus:ring-2 ring-border
-        ${isLoading ? "bg-primary/80 cursor-not-allowed" : "bg-primary hover:bg-primary/90 hover:border-gray-600 hover:text-white dark:hover:bg-primary-hover dark:hover:text-primary-hover-foreground dark:hover:border-gray-600"} 
+        ${isLoading ? "bg-primary/80 cursor-not-allowed" : "bg-primary hover:scale-[1.02] transform-gpu hover:border-gray-600 hover:text-white dark:hover:bg-primary-hover dark:hover:text-primary-hover-foreground dark:hover:border-gray-600"} 
         text-primary-foreground
       `}
     >

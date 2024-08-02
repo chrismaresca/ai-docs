@@ -18,7 +18,7 @@ export default async function LandingPageHeader() {
 
   return (
     <>
-      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full py-7">
+      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full pt-4 pb-7">
         <nav className="relative max-w-7xl w-full flex flex-wrap sm:grid sm:grid-cols-12 basis-full items-center px-4 sm:px-6 mx-auto" aria-label="Global">
           <div className="sm:col-span-3">
             {/* Logo */}
@@ -30,7 +30,7 @@ export default async function LandingPageHeader() {
           </div>
 
           {/* Button Group */}
-          <div className="flex items-center gap-x-2 ms-auto py-1 sm:ps-6 sm:order-3 sm:col-span-3">
+          <div className="flex items-center gap-x-2 ms-auto py-1 sm:ps-1 sm:order-3 sm:col-span-3">
             {/* <button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-gray-200 text-black hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white">
               <Link href="/projects"> Sign in</Link>
             </button> */}

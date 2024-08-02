@@ -1,5 +1,6 @@
 // toolbarFunctions.ts
 import { LexicalEditor, ElementFormatType, TextFormatType } from 'lexical';
+import { useMemo } from 'react';
 import {
   FORMAT_TEXT_COMMAND,
   FORMAT_ELEMENT_COMMAND,
@@ -22,3 +23,15 @@ export const undo = (editor: LexicalEditor): void => {
 export const redo = (editor: LexicalEditor): void => {
   editor.dispatchCommand(REDO_COMMAND, undefined);
 };
+
+
+
+function useSmallToolbarDivider(width: number) {
+  return useMemo(() => {
+    if (width < 600) return false;
+    if (width < 1000) return true;
+    return true;
+  }, [width]);
+}
+
+export default useSmallToolbarDivider;

@@ -19,7 +19,7 @@ interface PlanCardProps {
 const PlanCard: React.FC<PlanCardProps> = ({ plan }) => {
   return (
     <div className={`h-full ${plan.num === 3 ? "sm:col-span-2 lg:col-span-1" : ""} ${plan.isPopular ? "dark" : ""}`}>
-      <div className="relative flex flex-col h-full p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-900 shadow shadow-slate-950/5">
+      <div className="relative flex flex-col h-full p-6 rounded-2xl bg-white bg-primary dark:bg-slate-900 border border-slate-200 dark:border-slate-900 shadow shadow-slate-950/5">
         {plan.isPopular && (
           <div className="absolute top-0 right-0 mr-6 -mt-4">
             <div className="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-emerald-500 text-white rounded-full shadow-sm shadow-slate-950/5">Most Popular</div>

@@ -25,11 +25,11 @@ const AuthButtons: React.FC<AuthButtonsProps> = ({ loggedIn }) => {
         </button>
       ) : (
         <>
-          <button type="button" className={`py-1 sm:py-1.5 px-2 lg:px-3 inline-flex items-center text-xs md:text-base font-medium focus:outline-none bg-transparent text-black hover:text-gray-600 transition-colors duration-200 ease-in-out `}>
+          <button type="button" className={`py-1 sm:py-1.5 px-2 lg:px-3 inline-flex items-center text-xs lg:text-base font-medium focus:outline-none bg-transparent text-black hover:text-gray-600 transition-colors duration-200 ease-in-out `}>
             <Link href="/auth/login">Sign In</Link>
           </button>
-          <button type="button" className={`py-1 sm:py-1.5 px-2 lg:px-3 inline-flex items-center gap-x-2 text-xs md:text-base rounded-3xl font-medium border bg-primary hover:bg-secondary hover:border-primary text-white hover:text-primary focus:ring-4  focus:ring-muted disabled:opacity-50 disabled:cursor-not-allowed`}>
-            <Link href="/auth/register">Register</Link>
+          <button type="button" className={`py-1 sm:py-1.5 px-2 lg:px-3 inline-flex items-center gap-x-2 text-xs lg:text-base rounded-3xl font-medium border bg-primary hover:bg-secondary hover:border-primary text-white hover:text-primary focus:ring-4  focus:ring-muted disabled:opacity-50 disabled:cursor-not-allowed`}>
+            <Link href="/auth/register">Get Started</Link>
           </button>
         </>
       )}

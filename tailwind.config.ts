@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss";
-import defaultTheme from 'tailwindcss/defaultTheme';
-
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config = {
   darkMode: ["class"],
@@ -10,15 +9,17 @@ const config = {
     screens: {
       "lp-sm": "650px",
       "lp-md": "899px",
-      ...defaultTheme.screens,
+      "editor-md1": "750px",
+      "editor-md2": "850px",
+      "editor-md3": "950px",
 
+      ...defaultTheme.screens,
     },
     container: {
       center: true,
       padding: "2rem",
       screens: {
         "2xl": "1400px",
-        
       },
     },
     extend: {
@@ -88,12 +89,37 @@ const config = {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(50%)" },
         },
+        "slide-in-bottom": {
+          "0%": { transform: "translateY(100%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+        "slide-out-bottom": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(100%)" },
+        },
+        "expand-height": {
+          "0%": { height: "auto", transform: "translateY(85%)" },
+          "100%": { height: "full", transform: "translateY(0)" },
+        },
+        "collapse-height": {
+          "0%": { height: "auto", transform: "translateY(0)" },
+          "100%": { height: "auto", transform: "translateY(50%)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         marquee: "marquee var(--duration) linear infinite",
         "marquee-reverse": "marquee-reverse var(--duration) linear infinite",
+        "slide-in-bottom": "slide-in-bottom 0.5s ease-out",
+        "slide-out-bottom": "slide-out-bottom 0.5s ease-out",
+        "expand-height": "expand-height 0.5s ease-out forwards",
+        "collapse-height": "collapse-height 0.5s ease-out forwards",
+        fadeIn: "fadeIn 3s ease-in-out",
       },
       spacing: {
         "0": "0px",

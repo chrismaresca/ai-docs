@@ -1,68 +1,48 @@
 import React from "react";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import PrelineCopy from "@/components/Preline/Copy";
 
 const LandingPageFooter: React.FC = () => {
   return (
-    <footer className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
-        <div>
-          <Link href="/" className="flex-none text-xl font-semibold text-black dark:text-white" aria-label="Brand">
-            Brand
-          </Link>
+    <footer className="p-4 py-8 sm:p-10">
+      <div className="mx-auto">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+          <div className="flex flex-col items-start">
+            <a href="#" className="mb-4 sm:mb-0 text-2xl font-semibold text-gray-900 dark:text-white">
+              Workmait
+            </a>
+            <ul className="flex flex-wrap sm:flex-nowrap sm:mt-4 gap-x-3 text-sm text-gray-500 dark:text-gray-400">
+              <li>
+                <a href="#features" className="hover:underline">
+                  Features
+                </a>
+              </li>
+              <li>
+                <a href="#testimonials" className="hover:underline">
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a href="#pricing" className="hover:underline">
+                  Pricing
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="flex justify-start sm:justify-end mt-4 sm:mt-0">
+            <PrelineCopy />
+          </div>
         </div>
-
-        <ul className="text-center">
-          <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-neutral-600">
-            <Link href="#features" className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200">
-              Features
-            </Link>
-          </li>
-          <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-neutral-600">
-            <Link href="#pricing" className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200">
-              Pricing
-            </Link>
-          </li>
-          <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-neutral-600">
-            <div className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger className="!cursor-pointer" asChild><p>Contact</p></TooltipTrigger>
-                  <TooltipContent>
-                    <p> Please directly email our founder Chris at chris@workmait.ai with any issues!</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-          </li>
-          <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-neutral-600">
-            <Link href="/blog" className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200">
-              Blog
-            </Link>
-          </li>
-        </ul>
-
-        {/* <div className="md:text-end space-x-2">
-          <Link href="#">
-            <a className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700">
-              <div className="flex-shrink-0 size-3.5">SVG Placeholder</div>
+        {/* <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 sm:my-8" />
+        <div className="sm:items-center sm:justify-between sm:flex">
+          <span className="block text-sm text-gray-500 dark:text-gray-400">
+            © 2021-2022{" "}
+            <a href="https://flowbite.com" className="hover:underline">
+              Flowbite™
             </a>
-          </Link>
-          <Link href="#">
-            <a className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700">
-              <div className="flex-shrink-0 size-3.5">SVG Placeholder</div>
-            </a>
-          </Link>
-          <Link href="#">
-            <a className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700">
-              <div className="flex-shrink-0 size-3.5">SVG Placeholder</div>
-            </a>
-          </Link>
-          <Link href="#">
-            <a className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700">
-              <div className="flex-shrink-0 size-3.5">SVG Placeholder</div>
-            </a>
-          </Link>
+            . All Rights Reserved.
+          </span>
         </div> */}
       </div>
     </footer>
