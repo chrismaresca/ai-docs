@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import ColorPicker from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/ColorPicker";
 import { useToolbar } from "@/context/ToolbarContext";
 import { FORMAT_TEXT_COMMAND } from "lexical";
-import ToolbarContainer from "@/components/TextEditor/EditorToolbar/ToolbarContainer";
+import ToolbarContainer from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/BaseComponents/ToolbarContainer";
 
 const BasicInlineEditor: React.FC = () => {
   const { isBold, isItalic, isUnderline, isStrikethrough, editor } = useToolbar();

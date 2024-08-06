@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { Undo2, Redo2 } from "lucide-react";
-import ToolbarButton from "../../ToolbarButton";
-import ToolbarContainer from "../../ToolbarContainer";
+import ToolbarButton from "../BaseComponents/ToolbarButton";
+import ToolbarContainer from "../BaseComponents/ToolbarContainer";
 
 const UndoRedo: React.FC = () => {
   return (

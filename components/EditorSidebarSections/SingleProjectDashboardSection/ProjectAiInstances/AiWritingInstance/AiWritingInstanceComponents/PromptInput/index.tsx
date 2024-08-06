@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { ArrowUp, Pencil, RotateCw } from "lucide-react";
 import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";

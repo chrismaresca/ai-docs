@@ -1,41 +1,38 @@
-"use client";
 import React, { useEffect } from "react";
-
-// Ai instance Context
-import { useAiInstanceContext } from "@/context/AiInstanceContext";
-
-// Editor Expansion Context
-import { useEditorExpansionContext, EditorExpansionProvider } from "@/context/EditorExpansionContext";
 
 // Ai instances
 import AiResearchInstance from "./ProjectAiInstances/AiResearchInstance";
 import AiWritingInstance from "./ProjectAiInstances/AiWritingInstance";
 
 // Edits Instance
-import ProjectEditsList from "./ProjectEditsList";
+import ProjectAiListViewClient from "./ProjectEditsList";
 
-// Define the AiInstanceType type
-export type AiInstanceType = "Writing" | "Research" | null;
+import { AiInstanceMeta } from "@/types";
 
-const SingleProjectDashboardSection: React.FC = () => {
-  const { aiInstanceID, aiInstanceType } = useAiInstanceContext();
-  const { isEditorExpanded } = useEditorExpansionContext();
+interface SingleProjectDashboardSectionProps {
+  searchParams: { [key: string]: string | string[] | undefined };
+}
 
-  useEffect(() => {
-    if (aiInstanceID !== null) {
-      console.log("new!");
-    }
-  }, [aiInstanceID]);
+const fetchAiInstances = async (): Promise<AiInstanceMeta[]> => {
+  // Replace this with your actual data fetching logic
+  return Array.from({ length: 15 }, (_, i) => ({
+    editId: (i + 1).toString(),
+    name: "Untitled Project",
+    editType: "Writing",
+    dateCreated: "May 2, 2024",
+    dateLastModified: "Jun 3, 2024",
+  }));
+};
+
+const SingleProjectDashboardSection: React.FC<SingleProjectDashboardSectionProps> = async ({ searchParams }) => {
+  const aiInstances = await fetchAiInstances();
+  const aiId = "";
 
   return (
     <div className="relative h-full">
-      <div className={`flex flex-col mt-[1rem] overflow-y-auto pb-10 relative ${isEditorExpanded ? "pointer-events-none opacity-50 blur-sm" : ""}`}>
-        <ProjectEditsList />
-      </div>
+      <ProjectAiListViewClient aiInstances={aiInstances} />
 
-      {aiInstanceID !== null && aiInstanceType === "Writing" && <AiWritingInstance />}
-
-      {aiInstanceID !== null && aiInstanceType === "Research" && <AiResearchInstance />}
+      {aiId !== null && <AiWritingInstance />}
     </div>
   );
 };

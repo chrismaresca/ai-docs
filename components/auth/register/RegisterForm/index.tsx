@@ -8,6 +8,7 @@ import { useRedirectAfterLogin } from "@/shared/useRedirectAfterLogin";
 import { getGoogleProvider, loginWithProvider } from "@/app/auth/login/firebase";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useSearchParams } from "next/navigation";
 
 import AuthButton from "@/components/auth-components/AuthButton";
 import GoogleIcon from "@/components/icons/GoogleIcon";
@@ -20,6 +21,8 @@ import { useAuthContext } from "@/context/AuthContext";
 const RegisterForm: React.FC = () => {
   const redirectAfterLogin = useRedirectAfterLogin();
   const { setHasLogged } = useAuthContext();
+  const searchParams = useSearchParams();
+  const paymentPlanOption = searchParams.get("plan") || "free";
 
   const [handleRegisterWithGoogle, isGoogleLoading, googleError] = useLoadingCallback(async () => {
     setHasLogged(false);
@@ -29,7 +32,7 @@ const RegisterForm: React.FC = () => {
     const displayName = credential.user.displayName || "";
     const firstName = displayName.split(" ")[0];
 
-    const userInfo = { id: credential.user.uid, name: firstName, email: credential.user.email };
+    const userInfo = { id: credential.user.uid, name: firstName, email: credential.user.email, plan: paymentPlanOption };
 
     await loginWithCredential(credential);
 
@@ -55,7 +58,7 @@ const RegisterForm: React.FC = () => {
     const credential = await createUserWithEmailAndPassword(auth, values.email, values.password);
     await loginWithCredential(credential);
 
-    const userInfo = { id: credential.user.uid, name: values.firstName, email: credential.user.email };
+    const userInfo = { id: credential.user.uid, name: values.firstName, email: credential.user.email, plan: paymentPlanOption };
 
     const response = await fetch("/api/register", {
       method: "POST",

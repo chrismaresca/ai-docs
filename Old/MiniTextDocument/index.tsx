@@ -5,7 +5,7 @@ import { Content, EditorContent } from "@tiptap/react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 // Use TipTapEditor
-import useTipTapEditor from "@/services/useTipTapEditor";
+import useTipTapEditor from "@/lib/services/useTipTapEditor";
 
 // Icons
 import { ChevronsUpDown, Copy, PictureInPicture } from "lucide-react";

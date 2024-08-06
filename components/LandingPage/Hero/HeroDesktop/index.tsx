@@ -1,7 +1,10 @@
 import React from "react";
 import HeroBrands from "./HeroBrands";
 
-const HeroDesktop = () => {
+
+const HeroDesktop = async () => {
+
+
   return (
     <div className="block max-lp-sm:[25rem] max-md:max-w-[35rem] mx-auto max-lp-md:max-w-[40rem]">
       <div className="grid lp-md:items-center lp-md:grid-cols-12 gap-x-6 lp-md:gap-x-8 mt-10 lp-md:mt-4 lg:mt-2">

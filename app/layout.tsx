@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-import { cn } from "@/services/utils";
+import { cn } from "@/lib/services/utils";
 import ThemeProvider from "@/containers/theme-provider";
 import PrelineScript from "@/components/PrelineScript";
 

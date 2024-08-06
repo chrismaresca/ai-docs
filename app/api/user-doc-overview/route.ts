@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { validateToken } from '@/services/validate';
+import { validateToken } from '@/lib/services/validate';
 import { getFirestore } from 'firebase-admin/firestore';
 import { getFirebaseAdminApp } from '@/firebase';
 

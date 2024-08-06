@@ -24,6 +24,7 @@ const Page: React.FC = () => {
   const { fullSidebarRef, promptOptionsRef, subSidebarRef } = useSidebarReferences();
   const { isEditorExpanded, toggleEditorExpansion } = useEditorExpansionContext();
 
+
   const toggleSidebar = () => {
     setIsToggling(true);
     setIsSidebarOpen((prev) => !prev);

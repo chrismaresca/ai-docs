@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { addDocument, deleteDocument, getDocument, updateDocument } from "../../../lib/firestore";
-import { validateToken } from "@/services/validate";
+import { validateToken } from "@/lib/services/validate";
 import { FieldValue } from "firebase-admin/firestore";
 
 const COLLECTION_NAME = "userDocs";

@@ -3,7 +3,8 @@ import React, { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { EllipsisVertical } from "lucide-react";
-import useEditorWindowSize from "@/services/toolbar-size-hooks";
+
+// Toolbar components
 import BasicInlineEditor from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/BasicInlineEditor";
 import SuperscriptSubscript from "./EditorToolbarComponents/SuperscriptSubscript";
 import BlockTypeCombobox from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/BlockType";
@@ -14,7 +15,10 @@ import Listing from "@/components/TextEditor/EditorToolbar/EditorToolbarComponen
 import AlignmentCombobox from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/Alignment";
 import UndoRedo from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/UndoRedo";
 import PrintSpellCheck from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/PrintSpellCheck";
-import Indentation from "./EditorToolbarComponents/Indentation";
+import Indentation from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/Indentation";
+
+// Hooks
+import useEditorWindowSize from "@/lib/hooks/useEditorWindowSize";
 
 // Define the interface for the props
 interface TextEditorToolbarProps {

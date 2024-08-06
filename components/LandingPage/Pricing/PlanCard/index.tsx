@@ -33,10 +33,14 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan }) => {
             <span className="text-slate-500 font-medium">/mo</span>
           </div>
           <div className="text-sm text-slate-500 mb-5">{plan.description}</div>
-          <Link className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-primary text-primary-foreground dark:text-primary-foreground px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+          <Link className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-primary text-primary-foreground dark:text-primary-foreground px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href={{ pathname: "/auth/register", query: { plan: plan.name.toLowerCase() } }}>
             Get Started
           </Link>
-          {plan.num === 3 && <div className="mt-3 text-center text-slate-900 dark:text-slate-200"><PrelineSlider id="123" min={3} max={49} step={1}/></div>}
+          {plan.num === 3 && (
+            <div className="mt-3 text-center text-slate-900 dark:text-slate-200">
+              <PrelineSlider id="123" min={3} max={49} step={1} />
+            </div>
+          )}
         </div>
         <div className="text-slate-900 dark:text-slate-200 font-medium mb-3">Includes:</div>
         <ul className="text-slate-600 dark:text-slate-400 text-sm space-y-3 grow">

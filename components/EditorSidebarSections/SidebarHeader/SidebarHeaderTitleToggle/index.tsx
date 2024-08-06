@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { ChevronsLeft } from "lucide-react"; // Importing the icon from lucide-react
+import { ChevronsLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type SidebarNavigationProps = {

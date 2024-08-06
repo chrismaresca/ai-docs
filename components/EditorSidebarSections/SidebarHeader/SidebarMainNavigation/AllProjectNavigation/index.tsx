@@ -1,16 +1,26 @@
 "use client";
 import React from "react";
-import { ChevronDown, MoveLeft, SquarePen, MoveRight, Square, ChevronLeft } from "lucide-react";
-import { useProjectContext } from "@/context";
-
-import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Square, ChevronLeft } from "lucide-react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 const AllProjectsNavigation: React.FC = () => {
-  const { updateProjectID } = useProjectContext();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const handleReturnToAllProjects = () => {
-    updateProjectID(null);
+    // Remove the projectID from the query params
+    const createQueryString = (name: string, value: string | null) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (value === null) {
+        params.delete(name);
+      } else {
+        params.set(name, value);
+      }
+      return params.toString();
+    };
+
+    router.push(pathname + "?" + createQueryString("project", null));
   };
 
   return (
@@ -24,7 +34,7 @@ const AllProjectsNavigation: React.FC = () => {
         <div className="inline-flex justify-end ml-auto items-center mr-4 w-[72%]">
           <Square fill="primary" className="h-2 w-2 mr-1.5" />
           <div className="text-xs tracking-tighter font-medium mr-0.5 truncate">
-            <span>Chris Maresca's Workspace</span>
+            <span>Chris Marescas Workspace</span>
             <span className="mx-2">/</span>
             <span>Project Name</span>
           </div>

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Check, ChevronsUpDown, ChevronDown } from "lucide-react";
 
-import { cn } from "@/services/utils";
+import { cn } from "@/lib/services/utils";
 import { Button } from "@/components/ui/button";
 import { Command, CommandGroup, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";

@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 
 // Editor Expansion Context
-import { useEditorExpansionContext, EditorExpansionProvider } from "@/context/EditorExpansionContext";
+import { useEditorExpansionContext } from "@/context/EditorExpansionContext";
 
 // Sidebar Components
 import SidebarHeaderTitleToggle from "./SidebarHeaderTitleToggle";

@@ -3,9 +3,22 @@
 import { authConfig } from "@/config/server-config";
 import { getFirebaseAdminApp } from "@/firebase";
 import { getFirestore } from "firebase-admin/firestore";
-import { getTokens } from "next-firebase-auth-edge";
+import { getTokens, getFirebaseAuth } from "next-firebase-auth-edge";
 import { cookies } from "next/headers";
 import { NextRequest } from "next/server";
+
+const commonOptions = {
+  apiKey: authConfig.apiKey,
+  cookieName: authConfig.cookieName,
+  cookieSerializeOptions: authConfig.cookieSerializeOptions,
+  cookieSignatureKeys: authConfig.cookieSignatureKeys,
+  serviceAccount: authConfig.serviceAccount,
+};
+
+const { setCustomUserClaims, getUser } = getFirebaseAuth({
+  serviceAccount: commonOptions.serviceAccount,
+  apiKey: commonOptions.apiKey,
+});
 
 export async function POST(request: NextRequest) {
   const { userInfo } = await request.json();
@@ -20,6 +33,9 @@ export async function POST(request: NextRequest) {
     });
   }
 
+  await setCustomUserClaims(tokens.decodedToken.uid, {
+    role: userInfo.plan || "free",
+  });
 
   try {
     const db = getFirestore(getFirebaseAdminApp());
@@ -27,6 +43,7 @@ export async function POST(request: NextRequest) {
       id: userInfo.id,
       name: userInfo.name,
       email: userInfo.email,
+      plan: userInfo.plan || "free",
     };
 
     await db.collection("users").doc(userInfo.id).set(user);
