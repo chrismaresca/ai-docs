@@ -26,7 +26,7 @@ const SingleEditSubmenu: React.FC<SingleEditSubmenuProps> = ({ editName, lastUpd
           {lastUpdated}
         </div> */}
         <span className="hover:underline text-xs text-slate-500 w-full text-nowrap cursor-pointer inline-flex justify-end items-center" onClick={toggleEditorExpansion}>
-          <span className="relative group font-light">{isEditorExpanded ? "collapse edit" : "show edit"}</span>
+          <span className="relative group font-light">{isEditorExpanded ? "collapse editor" : "show editor"}</span>
           <span className="transition-transform duration-500 ease-in-out">
             {isEditorExpanded ? <ChevronDown className="h-3 w-3 ml-1.5" /> : <ChevronUp className="h-3 w-3 ml-1.5" />}
           </span>

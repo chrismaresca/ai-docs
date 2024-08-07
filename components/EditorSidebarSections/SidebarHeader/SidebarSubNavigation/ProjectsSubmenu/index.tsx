@@ -12,12 +12,12 @@ const ProjectsSubmenu = () => {
         <div className="font-medium text-lg">Projects</div>
         <div className="ml-2 text-[10px] font-light">12</div>
       </div>
-      <div className="inline-flex ml-auto items-center space-x-2 mr-0.5 text-slate-400">
-        <Button variant="ghost" className="p-1 h-8" onClick={startNewProject}>
-          <PencilLine className="h-5 w-5" />
+      <div className="inline-flex ml-auto items-center space-x-1.5 mr-0.5 text-slate-400">
+        <Button variant="ghost" className="p-1 h-6" onClick={startNewProject}>
+          <PencilLine className="h-4 w-4" />
         </Button>
-        <Button variant="ghost" className="p-1 h-8">
-          <Search className="h-5 w-5" />
+        <Button variant="ghost" className="p-1 h-6">
+          <Search className="h-4 w-4" />
         </Button>
       </div>
     </div>

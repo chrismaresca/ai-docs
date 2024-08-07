@@ -11,6 +11,7 @@ import MiniTextDocument from "./AiWritingInstanceComponents/MiniTextDocument";
 
 import TextIterationListView from "./AiWritingInstanceComponents/TextIterationListView";
 import { TextIteration } from "@/types";
+import { useSearchParams } from "next/navigation";
 
 const initialContent = {
   type: "doc",
@@ -69,11 +70,34 @@ const initialContent = {
 
 const AiWritingInstance: React.FC = () => {
   const [promptInputValue, setPromptInputValue] = useState("");
-  const [editName, setEditName] = useState("Initial Edit Name");
+  const [isActiveEdit, setIsActiveEdit] = useState(false);
+
+  const [editName, setEditName] = useState("");
   const [lastUpdated, setLastUpdated] = useState("May 1, 2024");
   const [fade, setFade] = useState(false);
   const { isEditorExpanded, toggleEditorExpansion } = useEditorExpansionContext();
   const { subSidebarRef } = useSidebarReferences();
+  const searchParams = useSearchParams();
+
+  // const aiId = searchParams?.get("ai") || null;
+
+  useEffect(() => {
+    const aiId = searchParams?.get("ai") ?? null;
+    console.log(aiId)
+
+    if (aiId) {
+      setIsActiveEdit(true);
+      // Perform API call to get the data needed
+    } else {
+      setIsActiveEdit(false);
+      setFade(true);
+      setEditName("New Writing Edit")
+      setFade(false);
+
+
+      // Optionally reset any data related to the edit
+    }
+  }, [searchParams]);
 
   const onPromptButtonClick = () => {
     console.log("Prompt button clicked with value:", promptInputValue);
@@ -90,7 +114,7 @@ const AiWritingInstance: React.FC = () => {
 
   const textIterations: TextIteration[] = [
     {
-      editId: "1",
+      instanceId: "1",
       iterationId: "a1",
       active: false,
       IterationType: "AI",
@@ -99,45 +123,56 @@ const AiWritingInstance: React.FC = () => {
       content: initialContent,
     },
     {
-      editId: "1",
+      instanceId: "1",
+      iterationId: "a1",
+      active: false,
+      IterationType: "AI",
+      task: "Smooth",
+      dateCreated: "2024-01-01",
+      content: initialContent,
+    },
+    {
+      instanceId: "1",
       iterationId: "a2",
-      active: false,
-      IterationType: "AI",
-      task: "Smooth",
-      dateCreated: "2024-01-01",
-      content: initialContent,
-    },
-    {
-      editId: "1",
-      iterationId: "a3",
-      active: false,
-      IterationType: "AI",
-      task: "Smooth",
-      dateCreated: "2024-01-01",
-      content: initialContent,
-    },
-    {
-      editId: "1",
-      iterationId: "a4",
       active: true,
-      IterationType: "User",
+      IterationType: "AI",
       task: "Smooth",
-      dateCreated: "2024-02-01",
+      dateCreated: "2024-01-01",
       content: initialContent,
     },
+    // {
+    //   instanceId: "1",
+    //   iterationId: "a3",
+    //   active: false,
+    //   IterationType: "AI",
+    //   task: "Smooth",
+    //   dateCreated: "2024-01-01",
+    //   content: initialContent,
+    // },
+    // {
+    //   instanceId: "1",
+    //   iterationId: "a4",
+    //   active: true,
+    //   IterationType: "User",
+    //   task: "Smooth",
+    //   dateCreated: "2024-02-01",
+    //   content: initialContent,
+    // },
   ];
 
   const activeIteration = textIterations.find((textIteration) => textIteration.active);
+  const inactiveIterations = textIterations.filter(textIteration => !textIteration.active);
+
 
   return (
-    <div ref={subSidebarRef} className="flex flex-col absolute bottom-0 left-0 right-0 z-10 bg-white pt-4 pb-6 border-t border-border/20 shadow-md shadow-slate-400 animate-slide-in-bottom">
+    <div ref={subSidebarRef} className={`flex flex-col absolute bottom-0 left-0 right-0 z-10 bg-white pt-4 pb-6 border-t border-border/20 shadow-md shadow-slate-400 animate-slide-in-bottom`}>
       <div>
         <div className={`transition-all duration-500 overflow-hidden ${isEditorExpanded ? "max-h-full" : "min-h-12"}`}>
           <SingleEditSubmenu editName={editName} lastUpdated={lastUpdated} fade={fade} isEditorExpanded={isEditorExpanded} setIsEditorExpanded={toggleEditorExpansion} />
           {/* <hr className="mt-4 h-2"></hr> */}
 
           <div className={`mt-2 overflow-y-auto transition-all duration-500 ${isEditorExpanded ? "max-h-[26rem]" : "max-h-0"}`}>
-            <TextIterationListView iterations={textIterations} />
+            <TextIterationListView inactiveIterations={inactiveIterations} />
 
             {activeIteration && (
               <div>

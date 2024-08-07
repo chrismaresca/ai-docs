@@ -11,7 +11,7 @@ const SidebarSubNavigation = () => {
   const searchParams = useSearchParams()
   const projectId = searchParams.get("project") || null;
 
-  return <div className="w-full !tracking-tight flex justify-between items-center text-primary/90">{projectId === null ? <ProjectsSubmenu /> : <AllEditsSubmenu /> }</div>;
+  return <div className="w-full animate-slide-in-bottom !tracking-tight flex justify-between items-center text-primary/90">{projectId === null ? <ProjectsSubmenu /> : <AllEditsSubmenu /> }</div>;
 };
 
 export default SidebarSubNavigation;

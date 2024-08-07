@@ -5,34 +5,35 @@ import AiResearchInstance from "./ProjectAiInstances/AiResearchInstance";
 import AiWritingInstance from "./ProjectAiInstances/AiWritingInstance";
 
 // Edits Instance
-import ProjectAiListViewClient from "./ProjectEditsList";
+import AiListViewClient from "./ProjectEditsList";
 
 import { AiInstanceMeta } from "@/types";
+import { getProjectAiInstances } from "@/lib/services/userEdits";
 
-interface SingleProjectDashboardSectionProps {
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-const fetchAiInstances = async (): Promise<AiInstanceMeta[]> => {
+const fetchAiInstances = async (projectId: string): Promise<AiInstanceMeta[]> => {
+  const aiInstances = await getProjectAiInstances(projectId);
+  return aiInstances;
   // Replace this with your actual data fetching logic
-  return Array.from({ length: 15 }, (_, i) => ({
-    editId: (i + 1).toString(),
-    name: "Untitled Project",
-    editType: "Writing",
+  return Array.from({ length: 35 }, (_, i) => ({
+    instanceId: (i + 1).toString(),
+    name: "Untitled Edit",
+    projectId: "123",
+    instanceType: "Writing",
     dateCreated: "May 2, 2024",
     dateLastModified: "Jun 3, 2024",
   }));
 };
 
-const SingleProjectDashboardSection: React.FC<SingleProjectDashboardSectionProps> = async ({ searchParams }) => {
-  const aiInstances = await fetchAiInstances();
-  const aiId = "";
+interface SingleProjectDashboardSectionProps {
+  projectId: string;
+}
+
+const SingleProjectDashboardSection: React.FC<SingleProjectDashboardSectionProps> = async ({ projectId }) => {
+  const aiInstances = await fetchAiInstances(projectId);
 
   return (
-    <div className="relative h-full">
-      <ProjectAiListViewClient aiInstances={aiInstances} />
-
-      {aiId !== null && <AiWritingInstance />}
+    <div className="relative h-full flex flex-col flex-grow overflow-hidden">
+      <AiListViewClient aiInstances={aiInstances}></AiListViewClient>
     </div>
   );
 };

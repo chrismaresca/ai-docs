@@ -1,6 +1,7 @@
 import React from "react";
 import { Square } from "lucide-react";
 
+
 const BaseProjectsNavigation: React.FC = () => {
   return (
     <>

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { authMiddleware, getTokens, redirectToHome, redirectToLogin } from "next-firebase-auth-edge";
 import { authConfig } from "./config/server-config";
 
-const PUBLIC_PATHS = ["/auth/register", "/auth/login", "/auth/reset-password", "/"];
+const PUBLIC_PATHS = ["/auth/register", "/auth/login", "/auth/reset-password"];
 
 const commonOptions = {
   apiKey: authConfig.apiKey,

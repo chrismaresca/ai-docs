@@ -5,17 +5,17 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover
 import { EllipsisVertical } from "lucide-react";
 
 // Toolbar components
-import BasicInlineEditor from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/BasicInlineEditor";
+import BasicInlineEditor from "./EditorToolbarComponents/BasicInlineEditor";
 import SuperscriptSubscript from "./EditorToolbarComponents/SuperscriptSubscript";
-import BlockTypeCombobox from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/BlockType";
-import FontTypeCombobox from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/FontFamily";
-import FontSizeAdjuster from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/FontSize";
-import Embedded from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/Embedded";
-import Listing from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/List";
-import AlignmentCombobox from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/Alignment";
-import UndoRedo from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/UndoRedo";
-import PrintSpellCheck from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/PrintSpellCheck";
-import Indentation from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/Indentation";
+import BlockTypeCombobox from "./EditorToolbarComponents/BlockType";
+import FontTypeCombobox from "./EditorToolbarComponents/FontFamily";
+import FontSizeAdjuster from "./EditorToolbarComponents/FontSize";
+import Embedded from "./EditorToolbarComponents/Embedded";
+import Listing from "./EditorToolbarComponents/List";
+import AlignmentCombobox from "./EditorToolbarComponents/Alignment";
+import UndoRedo from "./EditorToolbarComponents/UndoRedo";
+import PrintSpellCheck from "./EditorToolbarComponents/PrintSpellCheck";
+import Indentation from "./EditorToolbarComponents/Indentation";
 
 // Hooks
 import useEditorWindowSize from "@/lib/hooks/useEditorWindowSize";

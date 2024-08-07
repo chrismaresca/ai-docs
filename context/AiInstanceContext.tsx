@@ -8,7 +8,7 @@ import { AiInstanceType } from "@/types";
 interface AiInstanceContextType {
   aiInstanceID: string | null;
   aiInstanceType: AiInstanceType;
-  updateAiInstance: (editID: string | null, editType: AiInstanceType) => void;
+  updateAiInstance: (editID: string | null, instanceType: AiInstanceType) => void;
 }
 
 const AiInstanceContext = createContext<AiInstanceContextType | undefined>(undefined);
@@ -17,9 +17,9 @@ export const AiInstanceProvider: React.FC<{ children: ReactNode }> = ({ children
   const [aiInstanceID, setAiInstanceID] = useState<string | null>(null);
   const [aiInstanceType, setAiInstanceType] = useState<AiInstanceType>(null);
 
-  const updateAiInstance = (editID: string | null = null, editType: AiInstanceType = null) => {
+  const updateAiInstance = (editID: string | null = null, instanceType: AiInstanceType = null) => {
     setAiInstanceID(editID);
-    setAiInstanceType(editType);
+    setAiInstanceType(instanceType);
   };
 
   return (

@@ -7,7 +7,7 @@ import { Content } from "@tiptap/core";
 
 // Writing Edit Instances
 export interface TextIteration {
-  editId: string;
+  instanceId: string;
   iterationId: string;
   active: boolean;
   IterationType: TextIterationType;

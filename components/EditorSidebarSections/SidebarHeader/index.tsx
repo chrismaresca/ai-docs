@@ -19,8 +19,8 @@ const SidebarHeader: React.FC<SidebarHeaderProps> = ({ toggleSidebar }) => {
   return (
     <div className={`px-4`}>
       <SidebarHeaderTitleToggle toggleSidebar={toggleSidebar} />
-      <div className={`mt-5 ${isEditorExpanded ? "pointer-events-none opacity-50 blur-sm" : ""}`}>
-        <SidebarMainNavigation />
+      <div className={`mt-[2.75rem] ${isEditorExpanded ? "pointer-events-none opacity-50 blur-sm" : ""}`}>
+        {/* <SidebarMainNavigation /> */}
         <SidebarSubNavigation />
       </div>
     </div>

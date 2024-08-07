@@ -3,10 +3,10 @@
 import React from "react";
 import { Bold, Italic, Underline, Strikethrough } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ColorPicker from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/ColorPicker";
+import ColorPicker from "../ColorPicker";
 import { useToolbar } from "@/context/ToolbarContext";
 import { FORMAT_TEXT_COMMAND } from "lexical";
-import ToolbarContainer from "@/components/TextEditor/EditorToolbar/EditorToolbarComponents/BaseComponents/ToolbarContainer";
+import ToolbarContainer from "../BaseComponents/ToolbarContainer";
 
 const BasicInlineEditor: React.FC = () => {
   const { isBold, isItalic, isUnderline, isStrikethrough, editor } = useToolbar();
